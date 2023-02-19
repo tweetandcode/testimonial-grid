@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap');
+:root {
+  --bg-purple: #733FC8;
+  --bg-white: white;
+  --bg-lightgray:#48556A;
+  --bg-darkgray: #19202D;
+  --body-bg: #ECF2F8;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--body-bg);
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  color: white;
+  font-family: 'Barlow Semi Condensed', sans-serif;
+}
+
+main {
+  display: grid;
+  width: 1110px;
+  height: 572px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  column-gap: 30px;
+  row-gap: 24px;
+}
+
+.card {
+  background: var(--bg-white);
+  border-radius: 8px;
+  padding: 26px 32px 32px 32px;
+}
+
+.profile-info {
+  display: flex;
+  gap: 17px;
+}
+
+.profile-info > img {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%; 
+}
+
+.profile-info > div {
+  display: flex;
+  gap: 4px;
+  flex-direction: column;
+}
+
+h1 {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  margin-top: 18px;
+  margin-bottom: 16px;
+}
+
+p {
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 18px;
+  color: #CFCFCF;
+  opacity: 0.7;
+}
+
+.profile-info > div > span:nth-child(1) {
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 13px;
+}
+
+.profile-info > div > span:nth-child(2) {
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 11px;
+  opacity: 0.5;
+}
+
+.card:nth-child(1) {
+  background: var(--bg-purple);
+  background-image: url('/bg-pattern-quotation.svg');
+  background-repeat: no-repeat no-repeat;
+  grid-column: 1 / 3;
+  background-position: 90% 0px;
+}
+
+.card:nth-child(2) {
+  background: var(--bg-lightgray);
+  grid-column: 3 / 4;
+}
+
+.card:nth-child(3) {
+  background: var(--bg-white);
+  grid-column: 4 / 5;
+  grid-row: 1 / 3;
+}
+
+.card:nth-child(3),
+.card:nth-child(4),
+.card:nth-child(3) > p,
+.card:nth-child(4) > p,
+.card:nth-child(3) > .profile-info > div > span,
+.card:nth-child(4) > .profile-info > div > span  {
+  color: #48556A;
+}
+
+.card:nth-child(4) {
+  background: var(--bg-white);
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+}
+
+.card:nth-child(5) {
+  background: var(--bg-darkgray);
+  grid-column: 2 / 4;
+  grid-row: 2 / 3;
+}
+
+@media screen and (max-width: 1110px) {
+  main {
+    width: 375px;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    padding: 71px 24px;
+  }
+}
